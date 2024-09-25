@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.service.product.dto.ProductResponse;
 import com.service.product.model.Product;
 import com.service.product.repository.ProductRepository;
 import com.service.product.service.ProductService;
@@ -31,13 +32,13 @@ public class ProductController {
 
     // Get all product
     @GetMapping
-    public List<Product> getAllProduct() {
+    public List<ProductResponse> getAllProduct() {
         return productService.getAllProduct();
     }
 
     // Get product by id
     @GetMapping("/{id}")
-    public Optional<Product> getProductById(@PathVariable Long id) {
+    public Optional<ProductResponse> getProductById(@PathVariable Long id) {
         return productService.getProductById(id);
     }
 
@@ -66,13 +67,13 @@ public class ProductController {
 
     // Get product by name
     @GetMapping("/find/name/{name}")
-    public Optional<Product> getProductByName(@PathVariable String name) {
+    public Optional<ProductResponse> getProductByName(@PathVariable String name) {
         return productService.getProductByName(name);
     }
 
     // Get product by sku
     @GetMapping("/find/sku/{sku}")
-    public Optional<Product> getProductBySku(@PathVariable String sku) {
+    public Optional<ProductResponse> getProductBySku(@PathVariable String sku) {
         return productService.getProductBySku(sku);
     }
 }
