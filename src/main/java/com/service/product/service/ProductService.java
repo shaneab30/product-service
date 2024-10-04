@@ -50,6 +50,14 @@ public class ProductService {
     }
 
     private ProductResponse convertToProductResponse(Product product) {
-        return new ProductResponse(product.getId(), product.getName(), product.getBrand(), product.getStock(), product.getCategory(), product.getPrice(), product.getStatus(), product.getSku());
+        return new ProductResponse(
+                product.getId(),
+                product.getName(),
+                product.getBrand(),
+                product.getStock(),
+                product.getCategory(),
+                product.getPrice(),
+                product.getStatus(),
+                product.getSku());
     }
 }

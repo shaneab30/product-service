@@ -22,22 +22,16 @@ public class Product {
 
     @Column(name = "name", nullable = false)
     private String name;
-
     @Column(name = "brand", nullable = false)
     private String brand;
-
     @Column(name = "stock", nullable = false)
     private Integer stock;
-
     @Column(name = "category", nullable = false)
     private String category;
-
     @Column(name = "price", nullable = false)
     private BigDecimal price;
-
     @Column(name = "status", nullable = false, columnDefinition = "varchar(10) default 'ACTIVE'")
     private String status;
-
     @Column(name = "sku", nullable = false, unique = true)
     private String sku;
 }
